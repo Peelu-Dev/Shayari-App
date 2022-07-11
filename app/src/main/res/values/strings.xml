@@ -2,4 +2,8 @@
     <string name="app_name">Meri Shayari</string>
     <string name="logo">TODO</string>
     <string name="spScreenTV">Hindi Shayari App</string>
+    <string name="custom_toolbar">Hindi Shayari App</string>
+    <string name="start">Start</string>
+    <string name="rate">Rate</string>
+    <string name="more">More</string>
 </resources>

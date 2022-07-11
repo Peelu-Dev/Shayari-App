@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/MeriShayari/app/src/main/res/drawable/btn_shape.xml" value="0.124" />
         <entry key="..\:/MeriShayari/app/src/main/res/layout/activity_main.xml" value="0.24010416666666667" />
         <entry key="..\:/MeriShayari/app/src/main/res/layout/activity_splash_screen.xml" value="0.176" />
+        <entry key="..\:/MeriShayari/app/src/main/res/layout/activity_start.xml" value="0.128" />
       </map>
     </option>
   </component>

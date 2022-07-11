@@ -40,6 +40,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
+            android:id="@+id/btn_start"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -59,6 +60,7 @@
         </TextView>
 
         <TextView
+            android:id="@+id/btn_rate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="108dp"
@@ -78,6 +80,7 @@
         </TextView>
 
         <TextView
+            android:id="@+id/btn_more"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="192dp"

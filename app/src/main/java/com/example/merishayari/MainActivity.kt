@@ -7,6 +7,8 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.merishayari.adapter.CategoryAdaptor
 import com.example.merishayari.databinding.ActivityMainBinding
 
 
@@ -16,6 +18,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val shayari = arrayListOf("Love Shayari","Attitude Shayari","Romantic Shayari")
+
+        binding.recyclerViewCategory.layoutManager = LinearLayoutManager(this)
+        binding.recyclerViewCategory.adapter = CategoryAdaptor(this,shayari)
 
         binding.btnMenu.setOnClickListener{
             if(binding.drawerLayout.isDrawerOpen(GravityCompat.START)){

@@ -21,6 +21,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:id="@+id/btn_menu"
                 android:background="@drawable/ic_baseline_menu_24"
                 android:layout_marginStart="20dp"
                 android:backgroundTint="@color/white"

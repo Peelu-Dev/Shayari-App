@@ -10,19 +10,30 @@ import androidx.core.view.GravityCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.merishayari.adapter.CategoryAdaptor
 import com.example.merishayari.databinding.ActivityMainBinding
+import com.example.merishayari.model.CategoryModel
+import com.google.firebase.firestore.FirebaseFirestore
 
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+    lateinit var db:FirebaseFirestore
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val shayari = arrayListOf("Love Shayari","Attitude Shayari","Romantic Shayari")
+            db = FirebaseFirestore.getInstance()
 
-        binding.recyclerViewCategory.layoutManager = LinearLayoutManager(this)
-        binding.recyclerViewCategory.adapter = CategoryAdaptor(this,shayari)
+        db.collection("Shayari").addSnapshotListener{ value,error ->
+            val shayari = arrayListOf<CategoryModel>()
+            val data = value?.toObjects(CategoryModel::class.java)
+            shayari.addAll(data!!)
+            binding.recyclerViewCategory.layoutManager = LinearLayoutManager(this)
+            binding.recyclerViewCategory.adapter = CategoryAdaptor(this,shayari)
+        }
+//        val shayari = arrayListOf("Love Shayari","Attitude Shayari","Romantic Shayari")
+
+
 
         binding.btnMenu.setOnClickListener{
             if(binding.drawerLayout.isDrawerOpen(GravityCompat.START)){
